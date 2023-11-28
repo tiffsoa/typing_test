@@ -1,11 +1,11 @@
 import time
 import datetime
-import sys, termios, tty
+import random
+import string
 
 
 def main():
-    timer(1)
-    getch()
+    # timer(1)
     print("Hi")
 
 
@@ -19,17 +19,14 @@ def timer(minutes: int):
     print("Stop! 0 seconds left!")
 
 
-def getch():
-    fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(fd)
-    try:
-        tty.setraw(sys.stdin.fileno())
-        ch = sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-    return ch
+char_list = []
+num_char = 30
+for i in range(num_char):
+    char_list.append(random.choice(string.ascii_lowercase))
+    print(char_list)
 
-
+user_list = input("Enter your answer : ")
+def comparison
 if __name__ == '__main__':
     main()
 
