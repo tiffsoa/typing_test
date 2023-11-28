@@ -1,16 +1,27 @@
+# import msvcrt
 import time
 import datetime
 import random
 import string
-# import msvcrt
 
 
 def main():
-    char_list = random_list(30)
+    print("This is your list of characters: ")
+    char_list = random_list(100)
     print(char_list)
-    # user_input = msvcrt.getch()
+    user_answer = input("Enter your answer: ")
     timer(1)
-    print("Hi")
+    answer_list = []
+    count = 0
+    for char in user_answer:
+        answer_list.append(char)
+    for i in range(len(user_answer)):
+        if char_list[i] == answer_list[i]:
+            count += 1
+        else:
+            count += 0
+    ch_per_sec = count
+    print("You can write ", ch_per_sec, " characters per minute")
 
 
 def timer(minutes: int):
@@ -24,11 +35,11 @@ def timer(minutes: int):
 
 
 def random_list(num_char: int):
-    char_list = []
-    num_char = 30
+    lst = []
+    num_char = 100
     for i in range(num_char):
-        char_list.append(random.choice(string.ascii_lowercase))
-    return char_list
+        lst.append(random.choice(string.ascii_lowercase))
+    return lst
 
 
 if __name__ == '__main__':
