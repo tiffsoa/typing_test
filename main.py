@@ -2,10 +2,14 @@ import time
 import datetime
 import random
 import string
+# import msvcrt
 
 
 def main():
-    # timer(1)
+    char_list = random_list(30)
+    print(char_list)
+    # user_input = msvcrt.getch()
+    timer(1)
     print("Hi")
 
 
@@ -19,14 +23,14 @@ def timer(minutes: int):
     print("Stop! 0 seconds left!")
 
 
-char_list = []
-num_char = 30
-for i in range(num_char):
-    char_list.append(random.choice(string.ascii_lowercase))
-    print(char_list)
+def random_list(num_char: int):
+    char_list = []
+    num_char = 30
+    for i in range(num_char):
+        char_list.append(random.choice(string.ascii_lowercase))
+    return char_list
 
-user_list = input("Enter your answer : ")
-def comparison
+
 if __name__ == '__main__':
     main()
 
